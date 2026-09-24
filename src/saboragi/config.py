@@ -57,12 +57,9 @@ class Settings:
         defaults = cls()
         cache = os.environ.get("SABORAGI_CACHE_DIR")
         api_key = _first_set("SABORAGI_API_KEY", "OPENROUTER_API_KEY", "OPENAI_API_KEY")
-        if os.environ.get("SABORAGI_BASE_URL"):
-            base_url = os.environ["SABORAGI_BASE_URL"]
-        elif api_key and api_key != defaults.api_key:
-            base_url = "https://openrouter.ai/api/v1"
-        else:
-            base_url = defaults.base_url
+        # A key in the environment is not a request to leave the machine.
+        # Remote calls happen only when SABORAGI_BASE_URL names that server.
+        base_url = os.environ.get("SABORAGI_BASE_URL") or defaults.base_url
         return cls(
             base_url=base_url,
             api_key=api_key or defaults.api_key,
@@ -87,7 +84,8 @@ class Settings:
     def require_model(self) -> str:
         if not self.model:
             raise RuntimeError(
-                "No LLM configured: set SABORAGI_MODEL (and SABORAGI_BASE_URL / SABORAGI_API_KEY "
-                "for non-local endpoints)."
+                "No local model is running, and no model name was set. "
+                "Start Ollama or another server on this machine, or set "
+                "SABORAGI_BASE_URL to an endpoint you chose."
             )
         return self.model

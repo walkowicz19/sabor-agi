@@ -3,9 +3,10 @@
 deliberate(): situation -> K compiled models -> sandbox solves ->
 sensitivity -> verdict. No LLM calls happen inside any solve loop.
 
-The benchmark always calls deliberate() with the model under test. Harness
-fallback (client sampling, or a handoff to the caller and its sub-agents)
-lives in the MCP server so an unavailable API model does not change the eval.
+The benchmark calls deliberate() with the model under test. That model is a
+local server when one is running. Harness fallback (client sampling, or a
+handoff to the caller and its sub-agents) is used when no local model can be
+called, so an external API is never required.
 """
 
 from __future__ import annotations
@@ -22,6 +23,7 @@ from saboragi.compile.compiler import (
 )
 from saboragi.compile.llm import LlmClient
 from saboragi.config import Settings
+from saboragi.local_models import resolve_settings
 from saboragi.sandbox.runner import run_analyze
 from saboragi.solve.types import SolveResult
 
@@ -117,7 +119,9 @@ def deliberate(
     llm: LlmClient | None = None,
 ) -> dict:
     settings = settings or Settings.from_env()
-    llm = llm or LlmClient(settings)
+    if llm is None:
+        settings = resolve_settings(settings)
+        llm = LlmClient(settings)
     compiled, warnings = compile_ensemble(llm, settings, situation, options, question_events)
     return _assemble(compiled, warnings, options, settings, _usage_of(llm), "external")
 

@@ -112,7 +112,7 @@ def render_markdown(report: dict) -> str:
     lines.append("Kill criterion: engine regret at least 10% below code-interpreter")
     lines.append("regret on the horizon-3 and horizon-10 tiers.")
     for tier in sorted(report["kill"]["tiers"]):
-        info = report["kill"][tier]
+        info = report["kill"]["tiers"][tier]
         lines.append(f"- h{tier}: {info}")
     lines.append("")
     lines.append("## By arm")

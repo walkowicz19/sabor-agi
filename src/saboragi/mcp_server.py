@@ -5,10 +5,12 @@ Call `deliberate` whenever a decision involves uncertainty, several steps, or
 possibly irreversible outcomes: the server compiles the situation into
 executable world models, solves them, and returns a decision-ready verdict.
 
-The configured API model compiles first. If it is missing or unreachable,
-the client's own model compiles via MCP sampling. If the client cannot
-sample, the tool returns status "needs_harness" and the caller (or one
-sub-agent per job) writes the models, then calls resume_deliberation.
+A model running on this machine compiles first (Ollama, LM Studio, or
+whatever is already listening locally). No external API key or model id is
+required. If nothing local can be called, the client's own model compiles
+via MCP sampling. If the client cannot sample, the tool returns status
+"needs_harness" and the caller (or one sub-agent per job) writes the models,
+then calls resume_deliberation.
 """
 
 from __future__ import annotations
@@ -61,12 +63,13 @@ async def deliberate(
     Treat the verdict as evidence, not truth: if confidence is "low" or the
     models disagree, say so and do not overstate certainty.
 
-    If the configured API model is missing or unavailable, this tool compiles
-    with the client model via MCP sampling. If the client cannot sample, the
-    result has status "needs_harness" and one job per ensemble member. You
-    must then write each World model yourself, or create one sub-agent per
-    job using that job's messages, and call resume_deliberation. Do not pick
-    an option before that verdict comes back.
+    A local model is used when one is already running on this machine. If none
+    is reachable, this tool compiles with the client model via MCP sampling.
+    If the client cannot sample, the result has status "needs_harness" and
+    one job per ensemble member. You must then write each World model
+    yourself, or create one sub-agent per job using that job's messages, and
+    call resume_deliberation. Do not pick an option before that verdict
+    comes back.
     """
     settings = Settings.from_env()
     mode = _compiler_mode()
@@ -183,7 +186,9 @@ def _refresh_tool_list_on_connect() -> None:
 
     original_received = ServerSession._received_notification
 
-    async def _received_notification(self: ServerSession, notification: types.ClientNotification) -> None:
+    async def _received_notification(
+        self: ServerSession, notification: types.ClientNotification
+    ) -> None:
         await original_received(self, notification)
         if isinstance(notification.root, types.InitializedNotification):
             await self.send_tool_list_changed()

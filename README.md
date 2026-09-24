@@ -30,17 +30,11 @@ uv run --group dev pytest -q
 
 The server speaks MCP over stdio. It is meant to run on your machine, next to the editor. Copy `mcp.example.json` into your Cursor MCP config and replace `REPLACE_WITH_ABSOLUTE_PROJECT_PATH` with the folder that contains this file. If `uv` is not on the PATH Cursor uses, put the full path to `uv` in `command`.
 
-There is no API key in that config. The model id and key stay in a `.env` file in the project folder, which is gitignored:
+That config only starts the local server. SaborAGI looks for a model already running on this machine: Ollama at `127.0.0.1:11434`, or LM Studio at `127.0.0.1:1234`. A model id and an API key are optional. A remote server is used when you set `SABORAGI_BASE_URL` to it.
 
-```
-SABORAGI_MODEL=your-model-id
-SABORAGI_API_KEY=your-key
-SABORAGI_BASE_URL=https://openrouter.ai/api/v1
-```
+`SABORAGI_K` is how many separate pictures that model writes. The default is 3.
 
-`SABORAGI_K` is how many separate pictures that same model writes. The default is 3.
-
-If no model is configured, or the provider is down, `deliberate` returns `needs_harness`. The caller writes one `World` per job and sends them to `resume_deliberation`. `SABORAGI_COMPILER=external` skips that handoff and fails instead. `SABORAGI_COMPILER=harness` skips the API model.
+When nothing local is reachable, `deliberate` returns `needs_harness`. The caller writes one `World` per job and sends them to `resume_deliberation`. `SABORAGI_COMPILER=harness` always uses that path. `SABORAGI_COMPILER=external` stays on the configured endpoint and skips the handoff.
 
 Tools:
 
@@ -67,11 +61,21 @@ The code checker rejects obvious dangerous constructs, then runs the model in a 
 
 `usecases/` holds two fictional modernizations, a 2003 bank counter and a 2014 parts counter. The day counts are judgments written into the rules, not a measured history. `validation/` holds later checks: a clinic book, a warehouse move, a rent-or-buy split, and physical scenes where the better move changes when the situation changes.
 
+## One local security check
+
+Kairos Sotos 1.0 14B, running locally as `kairos-sotos:q6` (with a security-auditor instruction and a 2048-token context), was given one containment write-up and no answer key. Isolate the payment service: lost orders cost 40, and records still leave 5% of the time. Rotate the admin token and stay up: engineer time costs 8, and records leave 25% of the time. Wait until morning: no immediate cost, and records leave 55% of the time. Records leaving add 100. The best expected cost is rotate, at 33, against 45 and 55.
+
+The local picture used those costs and chances. A sampled solve also picks rotate (about 31, 45, and 53). The automatic checker rejected the picture: isolate and wait can leave the state equal to the start when records do not leave, because there is no clock, and the repair returned the same code. The model also widened 25% to a range of 10–40%. At 40%, isolate wins.
+
+Grok 4.7, given the same stated numbers in this session, produced an exact picture: −33, −45, −55, and the same choice. That is one decision and one picture each. It is separate from the horizon-3 and horizon-10 benchmark.
+
+The opening is that the incident write-up stays on the machine. Kairos Sotos 1.0 14B supplies the picture. The solver walks the futures. The same check can sit in front of other hard-to-reverse security choices: when to isolate, when to stay up, and which guessed chance would flip the plan.
+
 ## The benchmark
 
 The bar for this project is a live comparison. On problems with a 3-step horizon and problems with a 10-step horizon, the engine arm has to show at least 10% lower regret than the code-interpreter arm.
 
-Generate the suite, then run it with a configured model:
+Generate the suite, then run it. The command uses a model already running on this machine. When none is running, the same command stays on the harness and keeps the problems on this machine.
 
 ```bash
 uv run python -m bench.generate
@@ -80,7 +84,7 @@ uv run saboragi-bench --arms engine,code_interpreter
 
 The full four-arm run is `uv run saboragi-bench`. Reports land under `runs/`. The generated problems are `bench/data/suite.jsonl`.
 
-That live comparison has not been scored yet. It needs `SABORAGI_MODEL` and a key. The suite itself is in the repo so the run can start as soon as a model is set.
+The live comparison is scored when that command finishes against a local model. A harness run prints `needs_harness` and leaves the kill criterion for a later scored run.
 
 ## License
 
