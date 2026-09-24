@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 128" role="img" aria-labelledby="title desc">
+  <title id="title">SaborAGI</title>
+  <desc id="desc">A tasting cup with one chosen path rising above two fainter futures.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 54c0 36 22 52 46 52s46-16 46-52" stroke="#e08a3c" stroke-width="7"/>
+    <path d="M24 54h92" stroke="#e08a3c" stroke-width="7"/>
+    <path d="M70 50C54 34 42 24 32 14" stroke="#e08a3c" stroke-width="4" opacity="0.45"/>
+    <path d="M70 50C86 34 98 24 108 14" stroke="#e08a3c" stroke-width="4" opacity="0.45"/>
+    <path d="M70 50V16" stroke="#1f8a78" stroke-width="7"/>
+  </g>
+  <circle cx="70" cy="12" r="7" fill="#1f8a78"/>
+  <text x="148" y="78" font-family="Georgia, 'Iowan Old Style', Palatino, 'Palatino Linotype', serif" font-size="48">
+    <tspan fill="#e08a3c">Sabor</tspan><tspan fill="#1f8a78">AGI</tspan>
+  </text>
+</svg>

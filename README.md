@@ -1,5 +1,9 @@
 # SaborAGI
 
+<p align="center">
+  <img src="assets/saboragi-logo.svg" alt="SaborAGI" width="420">
+</p>
+
 SaborAGI is a pause before a choice that is unsure, has several steps, or is hard to take back. A language model writes the situation down once, as rules. This program checks that the picture can be played, then walks the possible futures and returns a verdict you can argue with.
 
 Sabor means taste. Nothing here is trained on old projects, and nothing is fitted to one decision.
