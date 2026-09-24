@@ -13,7 +13,8 @@ from pathlib import Path
 
 from saboragi.sandbox import guard
 
-SRC_DIR = Path(__file__).resolve().parents[2]  # .../src
+# Directory that contains the saboragi package: src/ in a checkout, site-packages when installed.
+SRC_DIR = Path(__file__).resolve().parents[2]
 
 
 @dataclass

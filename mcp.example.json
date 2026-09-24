@@ -3,9 +3,10 @@
     "saboragi": {
       "command": "uv",
       "args": [
+        "tool",
         "run",
-        "--project",
-        "REPLACE_WITH_ABSOLUTE_PROJECT_PATH",
+        "--from",
+        "git+https://github.com/walkowicz19/sabor-agi",
         "saboragi"
       ]
     }

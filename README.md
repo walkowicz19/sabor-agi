@@ -28,7 +28,7 @@ uv run --group dev pytest -q
 
 ## Use it from an MCP client
 
-The server speaks MCP over stdio. It is meant to run on your machine, next to the editor. Paste this into the client’s MCP config (Cursor, Claude Desktop, VS Code, or any client that uses `mcpServers`). Replace `REPLACE_WITH_ABSOLUTE_PROJECT_PATH` with the folder that contains this file. If `uv` is not on the PATH that client uses, put the full path to `uv` in `command`.
+The server speaks MCP over stdio. Paste this once into the client’s global MCP settings (Cursor, Claude Desktop, VS Code, or any client that uses `mcpServers`). It starts the same way in every workspace. The open folder does not have to be this repository. If `uv` is not on the PATH that client uses, put the full path to `uv` in `command`.
 
 ```json
 {
@@ -36,9 +36,10 @@ The server speaks MCP over stdio. It is meant to run on your machine, next to th
     "saboragi": {
       "command": "uv",
       "args": [
+        "tool",
         "run",
-        "--project",
-        "REPLACE_WITH_ABSOLUTE_PROJECT_PATH",
+        "--from",
+        "git+https://github.com/walkowicz19/sabor-agi",
         "saboragi"
       ]
     }
