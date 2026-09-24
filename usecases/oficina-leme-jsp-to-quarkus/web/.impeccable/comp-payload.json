@@ -1,0 +1,44 @@
+{
+  "title": "Which gauge composition",
+  "question": "The gauge board is locked. Which composition should the counter be built from?",
+  "options": [
+    {
+      "id": "dial-first",
+      "label": "Dial first",
+      "kicker": "THE CHOSEN DIRECTION",
+      "lineage": "Compressor-wall instrument panel",
+      "thesis": "One large dial leads. The queue is a row of smaller dials under it.",
+      "palette": ["#C9CDC8", "#F7F8F4", "#1C1F1E", "#D23B2E"],
+      "materials": ["enamel dial", "black bezel", "aluminum panel"],
+      "viewport": "The selected part fills the screen. The needle meets the red request mark.",
+      "risk": "The queue can shrink until a clerk cannot scan the other jobs.",
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "hero": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "queue-first",
+      "label": "Queue first",
+      "lineage": "Compressor-wall instrument panel",
+      "thesis": "The requisition queue is the top row. The large dial is the job you opened.",
+      "palette": ["#C9CDC8", "#F7F8F4", "#1C1F1E", "#D23B2E"],
+      "materials": ["enamel dial", "black bezel", "aluminum panel"],
+      "viewport": "Four small dials across the top, then one large dial for 100331.",
+      "risk": "The top row can turn into four equal heroes and the selected job loses rank.",
+      "comp": ".impeccable/mocks/comp-queue-first.webp",
+      "hero": ".impeccable/mocks/comp-queue-first.webp"
+    },
+    {
+      "id": "split",
+      "label": "Tick strip and dial",
+      "lineage": "Compressor-wall instrument panel",
+      "thesis": "A dense list of tick strips on the left, one dial for the open part on the right.",
+      "palette": ["#C9CDC8", "#F7F8F4", "#1C1F1E", "#D23B2E"],
+      "materials": ["enamel dial", "tick strip", "aluminum panel"],
+      "viewport": "Left third is the parts. Right two-thirds is the dial, with Approve under it.",
+      "risk": "The strips can become a plain table and the dial becomes decoration.",
+      "comp": ".impeccable/mocks/comp-split.webp",
+      "hero": ".impeccable/mocks/comp-split.webp"
+    }
+  ],
+  "steer": true
+}

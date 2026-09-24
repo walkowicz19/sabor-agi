@@ -1,0 +1,47 @@
+{
+  "recommended": "strangler_counter_first",
+  "confidence": "high",
+  "options": [
+    {
+      "action": "strangler_counter_first",
+      "ev": -25.899999999999995,
+      "ci": [-25.9, -25.89999999999999],
+      "p_events": {
+        "credential_incident": 0.06,
+        "missed_behavior": 0.10000000000000002
+      },
+      "worst_case_p5": -57.0,
+      "models_ranking_first": 3
+    },
+    {
+      "action": "big_bang_rewrite",
+      "ev": -36.91,
+      "ci": [-36.91, -36.91],
+      "p_events": {
+        "credential_incident": 0.09000000000000001,
+        "missed_behavior": 0.32
+      },
+      "worst_case_p5": -63.0,
+      "models_ranking_first": 0
+    },
+    {
+      "action": "facade_keep_tomcat",
+      "ev": -53.6,
+      "ci": [-53.60000000000001, -53.599999999999994],
+      "p_events": {
+        "credential_incident": 0.28,
+        "missed_behavior": 0.0
+      },
+      "worst_case_p5": -104.0,
+      "models_ranking_first": 0
+    }
+  ],
+  "epistemic_spread": {
+    "ev_range_across_models": [-25.9, -25.9],
+    "agree_on_best": true
+  },
+  "flip_parameters": [],
+  "warnings": [],
+  "models_used": 3,
+  "compiler": "harness"
+}

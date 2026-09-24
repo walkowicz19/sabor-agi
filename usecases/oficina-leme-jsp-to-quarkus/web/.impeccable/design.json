@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T18:53:00.000Z",
+  "title": "Design System: Oficina Leme Parts Counter",
+  "extensions": {
+    "colorMeta": {
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "oklch(55% 0.18 30)",
+        "tonalRamp": [
+          "oklch(20% 0.12 30)",
+          "oklch(30% 0.15 30)",
+          "oklch(40% 0.17 30)",
+          "oklch(50% 0.18 30)",
+          "oklch(55% 0.18 30)",
+          "oklch(68% 0.14 30)",
+          "oklch(82% 0.08 30)",
+          "oklch(94% 0.03 30)"
+        ]
+      },
+      "aluminum": {
+        "role": "neutral",
+        "displayName": "Brushed Aluminum",
+        "canonical": "oklch(83% 0.01 145)",
+        "tonalRamp": [
+          "oklch(25% 0.01 145)",
+          "oklch(40% 0.01 145)",
+          "oklch(55% 0.01 145)",
+          "oklch(68% 0.01 145)",
+          "oklch(78% 0.01 145)",
+          "oklch(83% 0.01 145)",
+          "oklch(90% 0.008 145)",
+          "oklch(96% 0.005 145)"
+        ]
+      },
+      "face": {
+        "role": "neutral",
+        "displayName": "Enamel Face",
+        "canonical": "oklch(97% 0.005 120)",
+        "tonalRamp": [
+          "oklch(35% 0.01 120)",
+          "oklch(50% 0.01 120)",
+          "oklch(65% 0.008 120)",
+          "oklch(78% 0.006 120)",
+          "oklch(88% 0.005 120)",
+          "oklch(93% 0.005 120)",
+          "oklch(97% 0.005 120)",
+          "oklch(99% 0.003 120)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Instrument Ink",
+        "canonical": "oklch(22% 0.01 160)",
+        "tonalRamp": [
+          "oklch(12% 0.01 160)",
+          "oklch(18% 0.01 160)",
+          "oklch(22% 0.01 160)",
+          "oklch(32% 0.01 160)",
+          "oklch(45% 0.01 160)",
+          "oklch(60% 0.008 160)",
+          "oklch(78% 0.005 160)",
+          "oklch(94% 0.003 160)"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Stamped Plate",
+        "canonical": "oklch(78% 0.012 145)",
+        "tonalRamp": [
+          "oklch(30% 0.01 145)",
+          "oklch(45% 0.012 145)",
+          "oklch(58% 0.012 145)",
+          "oklch(68% 0.012 145)",
+          "oklch(78% 0.012 145)",
+          "oklch(84% 0.01 145)",
+          "oklch(90% 0.008 145)",
+          "oklch(96% 0.005 145)"
+        ]
+      },
+      "plate-ghost": {
+        "role": "neutral",
+        "displayName": "Ghost Plate",
+        "canonical": "oklch(82% 0.01 145)",
+        "tonalRamp": [
+          "oklch(32% 0.01 145)",
+          "oklch(48% 0.01 145)",
+          "oklch(62% 0.01 145)",
+          "oklch(72% 0.01 145)",
+          "oklch(82% 0.01 145)",
+          "oklch(88% 0.008 145)",
+          "oklch(93% 0.005 145)",
+          "oklch(97% 0.003 145)"
+        ]
+      },
+      "plate-edge": {
+        "role": "neutral",
+        "displayName": "Plate Edge",
+        "canonical": "oklch(42% 0.012 145)",
+        "tonalRamp": [
+          "oklch(18% 0.01 145)",
+          "oklch(28% 0.012 145)",
+          "oklch(36% 0.012 145)",
+          "oklch(42% 0.012 145)",
+          "oklch(55% 0.01 145)",
+          "oklch(70% 0.008 145)",
+          "oklch(85% 0.005 145)",
+          "oklch(95% 0.003 145)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Oficina Leme brand lockup only." },
+      "title": { "displayName": "Title", "purpose": "Parts counter subtitle under the brand." },
+      "body": { "displayName": "Body", "purpose": "Root counter copy and inherited controls." },
+      "label": { "displayName": "Label", "purpose": "Uppercase plate stamps, field labels, lock note." },
+      "numeral": { "displayName": "Numeral", "purpose": "Dial face tick numbers; hub uses smaller condensed weights." }
+    },
+    "shadows": [
+      {
+        "name": "dial-lead",
+        "value": "drop-shadow(8px 16px 10px rgba(28, 31, 30, 0.28))",
+        "purpose": "Cast under the lead instrument."
+      },
+      {
+        "name": "dial-queue",
+        "value": "drop-shadow(4px 8px 6px rgba(28, 31, 30, 0.24))",
+        "purpose": "Cast under queue instruments."
+      },
+      {
+        "name": "plate-cast",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.65), inset 0 -1px 0 rgba(28, 31, 30, 0.28), 0 8px 12px rgba(28, 31, 30, 0.16)",
+        "purpose": "Stamped plate enamel and metal cast."
+      },
+      {
+        "name": "lever-cast",
+        "value": "6px 12px 14px rgba(28, 31, 30, 0.3)",
+        "purpose": "Physical throw on the approve lever."
+      },
+      {
+        "name": "sign-plate",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 16px 22px rgba(28, 31, 30, 0.18)",
+        "purpose": "Sign-on credential dock."
+      }
+    ],
+    "motion": [
+      {
+        "name": "needle-snap",
+        "value": "420ms cubic-bezier(0.16, 0.84, 0.24, 1)",
+        "purpose": "Needle rotates to the live requested quantity."
+      },
+      {
+        "name": "reduce-motion",
+        "value": "transition: none",
+        "purpose": "Disable needle motion when prefers-reduced-motion is set."
+      }
+    ],
+    "breakpoints": [
+      { "name": "desk-collapse", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Stamped Plate",
+      "kind": "button",
+      "refersTo": "plate",
+      "description": "Default fastener plate for counter actions.",
+      "html": "<button type=\"button\" class=\"ds-plate\">Open requisition</button>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: 2.4rem; padding: 0.45rem 0.9rem; border: 1px solid #4E554F; border-radius: 2px; background-color: #B7BDB6; background-image: radial-gradient(circle at 7px 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at 7px calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), linear-gradient(180deg, rgba(255,255,255,0.28), rgba(28,31,30,0.08)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -1px 0 rgba(28,31,30,0.28), 0 8px 12px rgba(28,31,30,0.16); font-family: \"Barlow Condensed\", sans-serif; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #1C1F1E; cursor: pointer; } .ds-plate:hover { filter: brightness(1.04); } .ds-plate:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; } .ds-plate:disabled { opacity: 0.55; cursor: wait; }"
+    },
+    {
+      "name": "Ghost Plate",
+      "kind": "button",
+      "refersTo": "plate-ghost",
+      "description": "Quieter plate for sign-off and match rows.",
+      "html": "<button type=\"button\" class=\"ds-plate-ghost\"><span>Clerk<small style=\"display:block;letter-spacing:0.08em;font-size:0.72rem;font-weight:500\">Role</small></span><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/><polyline points=\"16 17 21 12 16 7\"/><line x1=\"21\" x2=\"9\" y1=\"12\" y2=\"12\"/></svg> Sign off</button>",
+      "css": ".ds-plate-ghost { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: 2.4rem; padding: 0.45rem 0.9rem; border: 1px solid #4E554F; border-radius: 2px; background-color: #C5CAC3; background-image: radial-gradient(circle at 7px 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at 7px calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), linear-gradient(180deg, rgba(255,255,255,0.28), rgba(28,31,30,0.08)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -1px 0 rgba(28,31,30,0.28), 0 8px 12px rgba(28,31,30,0.16); font-family: \"Barlow Condensed\", sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #1C1F1E; cursor: pointer; } .ds-plate-ghost:hover { filter: brightness(1.03); } .ds-plate-ghost:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Icon Plate",
+      "kind": "button",
+      "refersTo": "plate-icon",
+      "description": "Square fastener plate for Lucide search and quantity steppers.",
+      "html": "<button type=\"button\" class=\"ds-plate-icon\" aria-label=\"Find a part\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg></button>",
+      "css": ".ds-plate-icon { display: inline-flex; align-items: center; justify-content: center; min-width: 2.6rem; min-height: 2.4rem; padding: 0.45rem; border: 1px solid #4E554F; border-radius: 2px; background-color: #B7BDB6; background-image: radial-gradient(circle at 7px 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at 7px calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), linear-gradient(180deg, rgba(255,255,255,0.28), rgba(28,31,30,0.08)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -1px 0 rgba(28,31,30,0.28), 0 8px 12px rgba(28,31,30,0.16); color: #1C1F1E; cursor: pointer; } .ds-plate-icon:hover { filter: brightness(1.04); } .ds-plate-icon:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Status Plate",
+      "kind": "chip",
+      "refersTo": "plate-status",
+      "description": "Stamped status: Pending, Approved, or Refused — not a hue chip.",
+      "html": "<p class=\"ds-plate-status\">Pending</p>",
+      "css": ".ds-plate-status { margin: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 7.5rem; min-height: 2.4rem; padding: 0.45rem 0.9rem; border: 1px solid #4E554F; border-radius: 2px; background-color: #B7BDB6; background-image: radial-gradient(circle at 7px 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) 7px, #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at 7px calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #1C1F1E 1.6px, #8d9390 2.2px, transparent 2.5px), linear-gradient(180deg, rgba(255,255,255,0.28), rgba(28,31,30,0.08)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -1px 0 rgba(28,31,30,0.28), 0 8px 12px rgba(28,31,30,0.16); font-family: \"Barlow Condensed\", sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1C1F1E; }"
+    },
+    {
+      "name": "Approve Lever",
+      "kind": "button",
+      "refersTo": "lever-approve",
+      "description": "Manager throw on the lead dial bezel for pending requisitions.",
+      "html": "<button type=\"button\" class=\"ds-lever\"><span class=\"ds-lever-handle\"></span><span class=\"ds-lever-word\">Approve</span></button>",
+      "css": ".ds-lever { width: 5.6rem; border: 0; border-radius: 0.55rem; background: #1C1F1E; color: #F7F8F4; padding: 0.7rem 0.35rem 0.75rem; display: flex; flex-direction: column; align-items: center; gap: 0.55rem; cursor: pointer; box-shadow: 6px 12px 14px rgba(28,31,30,0.3); } .ds-lever:hover { filter: brightness(1.08); } .ds-lever:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; } .ds-lever:disabled { cursor: wait; opacity: 0.7; } .ds-lever-handle { width: 1.15rem; height: 3.4rem; border-radius: 0.6rem; background: #2c302e; position: relative; box-shadow: inset -2px 0 0 #111; } .ds-lever-handle::before { content: \"\"; position: absolute; top: -0.45rem; left: 50%; width: 1.9rem; height: 1.15rem; transform: translateX(-50%); background: #3a3f3c; border-radius: 0.2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.25); } .ds-lever-word { font-family: \"Barlow Condensed\", sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; }"
+    },
+    {
+      "name": "Counter Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Enamel field with ink stroke for find and quantity.",
+      "html": "<label class=\"ds-field\">Find a part<input class=\"ds-input\" placeholder=\"Code or name\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.25rem; font-family: \"Barlow Condensed\", sans-serif; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; color: #1C1F1E; } .ds-input { caret-color: #1C1F1E; background: #F7F8F4; border: 1px solid #1C1F1E; border-radius: 2px; padding: 0.4rem 0.55rem; font-family: \"Barlow\", sans-serif; font-size: 16px; color: #1C1F1E; font-variant-numeric: tabular-nums; } .ds-input::placeholder { color: #3c433f; } .ds-input:hover { border-color: #111413; } .ds-input:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Lead Dial",
+      "kind": "custom",
+      "refersTo": "dial-lead",
+      "description": "Large enamel instrument: black bezel, signal limit wedge, ink needle, light hub lettering.",
+      "html": "<svg class=\"ds-dial-lead\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"Lead dial\"><circle cx=\"100\" cy=\"100\" r=\"96\" fill=\"#1C1F1E\"/><circle cx=\"100\" cy=\"100\" r=\"78\" fill=\"#F7F8F4\"/><path d=\"M100 100 L148 64 A70 70 0 0 1 162 100 Z\" fill=\"#D23B2E\" opacity=\"0.95\"/><line x1=\"100\" y1=\"37\" x2=\"100\" y2=\"26\" stroke=\"#1C1F1E\" stroke-width=\"1.6\"/><text x=\"100\" y=\"48\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"700\" font-size=\"11\" fill=\"#1C1F1E\">0</text><polygon points=\"100,30 96.8,92 103.2,92\" fill=\"#1C1F1E\"/><circle cx=\"100\" cy=\"100\" r=\"28\" fill=\"#1C1F1E\" stroke=\"#F7F8F4\" stroke-width=\"1.25\"/><text x=\"100\" y=\"96\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"700\" font-size=\"8.5\" fill=\"#F7F8F4\">100331</text><text x=\"100\" y=\"108\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"600\" font-size=\"7\" fill=\"#F7F8F4\">Gasket</text></svg>",
+      "css": ".ds-dial-lead { width: min(23rem, 42vw); height: auto; display: block; filter: drop-shadow(8px 16px 10px rgba(28,31,30,0.28)); } .ds-dial-lead:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Queue Dial",
+      "kind": "custom",
+      "refersTo": "dial-queue",
+      "description": "Smaller queue instrument without the live signal wedge.",
+      "html": "<button type=\"button\" class=\"ds-dial-hit\" aria-label=\"Queue dial\"><svg class=\"ds-dial-queue\" viewBox=\"0 0 200 200\" aria-hidden=\"true\"><circle cx=\"100\" cy=\"100\" r=\"96\" fill=\"#1C1F1E\"/><circle cx=\"100\" cy=\"100\" r=\"78\" fill=\"#F7F8F4\"/><line x1=\"100\" y1=\"37\" x2=\"100\" y2=\"26\" stroke=\"#1C1F1E\" stroke-width=\"1.6\"/><polygon points=\"100,30 96.8,92 103.2,92\" fill=\"#1C1F1E\"/><circle cx=\"100\" cy=\"100\" r=\"26\" fill=\"#1C1F1E\" stroke=\"#F7F8F4\" stroke-width=\"1.25\"/><text x=\"100\" y=\"97\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"700\" font-size=\"8.5\" fill=\"#F7F8F4\">100442</text><text x=\"100\" y=\"107\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"600\" font-size=\"7\" fill=\"#F7F8F4\">Bolt</text></svg></button>",
+      "css": ".ds-dial-hit { padding: 0; border: 0; background: transparent; cursor: pointer; border-radius: 50%; } .ds-dial-hit:hover .ds-dial-queue circle:first-child { fill: #111413; } .ds-dial-hit:focus-visible { outline: 2px solid #1C1F1E; outline-offset: 3px; } .ds-dial-queue { width: 8.25rem; height: auto; display: block; filter: drop-shadow(4px 8px 6px rgba(28,31,30,0.24)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Gauge Board",
+    "overview": "Oficina Leme’s counter is a brushed aluminum instrument panel, not an admin console. On-hand is the red limit on an enamel dial; the requested quantity is the needle that must not pass it. The desk reads as hardware: black bezels, condensed gothic numerals, stamped metal plates with four corner fasteners, and a single approve lever on the lead dial’s bezel.\n\nDensity is dial-first and spare. One large live dial leads the viewport; smaller queue dials and named plates support it. Status is stamped language—Pending, Approved, Refused—never a hue chip. Signal red appears only on the live limit wedge. The world refuses the admin shell of sidebar, cards, and status chips.",
+    "keyCharacteristics": [
+      "Dial-first gauge board on full-bleed brushed aluminum (`public/panel.webp`)",
+      "Barlow Condensed for display and plate stamps; Barlow for body",
+      "Signal red only on the live on-hand limit; black hub with light lettering",
+      "Stamped plates with four corner fasteners for actions and status",
+      "Approve lever on the lead bezel; Lucide for search, sign-off, and quantity steppers"
+    ],
+    "rules": [
+      {
+        "name": "The Live Limit Rule",
+        "body": "Signal red appears only on the live dial’s on-hand wedge (and fault text). Status never borrows the hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Bezel Rule",
+        "body": "Dials sit in a heavy black ring. Light lettering lives on the black hub; dark numerals live on the enamel face.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stamp Case Rule",
+        "body": "Plates, levers, labels, and the brand lockup are uppercase condensed stamps. Do not mix sentence-case UI chrome into the board.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cast Shadow Rule",
+        "body": "Shadows are soft, directional, and attached to instruments and plates—never hard offset outlines or floating card stacks.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Fastener Plate Rule",
+        "body": "Interactive chrome is a stamped plate with four corner fasteners on the panel texture—not a bordered card or pill chip.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do lead with one large live dial and put the approve lever on its bezel.",
+      "Do keep signal red on the live limit (and fault text) only.",
+      "Do stamp status as Pending, Approved, or Refused on fastener plates.",
+      "Do use Barlow Condensed for brand, plates, dials; Barlow for body; Lucide for search, sign-off, and quantity steppers.",
+      "Do ground the board on `public/panel.webp` brushed aluminum with enamel faces and black bezels."
+    ],
+    "donts": [
+      "Don't introduce an admin shell: sidebar, content cards, or status chips.",
+      "Don't paint plates, levers, or status stamps with signal red.",
+      "Don't replace stamped plates with pill chips, soft UI cards, or glyph-only chrome without the plate.",
+      "Don't put marketing kickers, eyebrow labels, or Portuguese subtitle lines on the board—product copy stays English counter voice.",
+      "Don't draw duplicate tick numerals on a dial; each scale value appears once."
+    ]
+  }
+}

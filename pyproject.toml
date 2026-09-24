@@ -1,0 +1,42 @@
+[project]
+name = "saboragi"
+version = "0.1.0"
+description = "Executable probabilistic world models as a decision tool for LLMs, served over MCP."
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.2,<2",
+    "numpy>=1.26",
+    "openai>=1.40",
+    "pydantic>=2.6",
+    "psutil>=5.9",
+]
+
+[project.scripts]
+saboragi = "saboragi.mcp_server:main"
+saboragi-bench = "bench.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/saboragi", "bench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/reference_models/*" = ["E501"]

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "saboragi": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "REPLACE_WITH_ABSOLUTE_PROJECT_PATH",
+        "saboragi"
+      ]
+    }
+  }
+}

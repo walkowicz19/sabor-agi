@@ -1,0 +1,292 @@
+{
+  "scenes": [
+    {
+      "label": "straight road",
+      "file": "tests\\reference_models\\drive.py",
+      "expected": "accelerate",
+      "expected_ev": 3.0,
+      "ok": true,
+      "best": "accelerate",
+      "ev": 3.0,
+      "options": {
+        "accelerate": 3.0,
+        "hold": 1.0,
+        "steer": 1.0
+      }
+    },
+    {
+      "label": "full cup",
+      "file": "tests\\reference_models\\tank.py",
+      "expected": "drain",
+      "expected_ev": 0.5,
+      "ok": true,
+      "best": "drain",
+      "ev": 0.5,
+      "options": {
+        "drain": 0.5,
+        "mix": 0.0
+      }
+    },
+    {
+      "label": "empty-handed helper",
+      "file": "tests\\reference_models\\agent_loop.py",
+      "expected": "lookup",
+      "expected_ev": 5.0,
+      "ok": true,
+      "best": "lookup",
+      "ev": 5.0,
+      "options": {
+        "lookup": 5.0,
+        "finish": -2.0
+      }
+    },
+    {
+      "label": "cool press",
+      "file": "tests\\reference_models\\machine.py",
+      "expected": "run",
+      "expected_ev": 3.0,
+      "ok": true,
+      "best": "run",
+      "ev": 3.0,
+      "options": {
+        "run": 3.0,
+        "cool": 2.0
+      }
+    },
+    {
+      "label": "straight numbers",
+      "file": "tests\\reference_models\\forecast.py",
+      "expected": "trust_trend",
+      "expected_ev": 0.0,
+      "ok": true,
+      "best": "trust_trend",
+      "ev": 0.0,
+      "options": {
+        "trust_trend": 0.0,
+        "repeat_last": -1.0
+      }
+    },
+    {
+      "label": "mark off to the side",
+      "file": "validation\\physical\\road_mark.py",
+      "expected": "steer",
+      "expected_ev": null,
+      "ok": true,
+      "best": "steer",
+      "ev": -0.6670843450544878,
+      "options": {
+        "accelerate": -2.23606797749979,
+        "hold": -1.0,
+        "steer": -0.6670843450544878
+      }
+    },
+    {
+      "label": "empty cup to fill",
+      "file": "validation\\physical\\cups_share.py",
+      "expected": "share",
+      "expected_ev": 1.0,
+      "ok": true,
+      "best": "share",
+      "ev": 1.0,
+      "options": {
+        "share": 1.0,
+        "pour_out": 0.0
+      }
+    },
+    {
+      "label": "press already hot",
+      "file": "validation\\physical\\hot_press.py",
+      "expected": "cool",
+      "expected_ev": 1.0,
+      "ok": true,
+      "best": "cool",
+      "ev": 1.0,
+      "options": {
+        "run": 0.0,
+        "cool": 1.0
+      }
+    },
+    {
+      "label": "bent numbers",
+      "file": "validation\\physical\\bent_forecast.py",
+      "expected": "repeat_last",
+      "expected_ev": 0.0,
+      "ok": true,
+      "best": "repeat_last",
+      "ev": 0.0,
+      "options": {
+        "trust_trend": -1.0,
+        "repeat_last": 0.0
+      }
+    },
+    {
+      "label": "facts already gathered",
+      "file": "validation\\physical\\facts_ready.py",
+      "expected": "finish",
+      "expected_ev": 5.0,
+      "ok": true,
+      "best": "finish",
+      "ev": 5.0,
+      "options": {
+        "lookup": 0.0,
+        "finish": 5.0
+      }
+    }
+  ],
+  "clinic": {
+    "recommended": "start_with_book",
+    "confidence": "high",
+    "options": [
+      {
+        "action": "start_with_book",
+        "ev": -22.000000000000004,
+        "ci": [
+          -22.000000000000004,
+          -22.000000000000004
+        ],
+        "p_events": {
+          "missed_behavior": 0.10000000000000002,
+          "privacy_incident": 0.05000000000000001
+        },
+        "worst_case_p5": -40.0,
+        "models_ranking_first": 3
+      },
+      {
+        "action": "rewrite_everything",
+        "ev": -35.0,
+        "ci": [
+          -35.0,
+          -35.0
+        ],
+        "p_events": {
+          "missed_behavior": 0.25,
+          "privacy_incident": 0.10000000000000002
+        },
+        "worst_case_p5": -48.0,
+        "models_ranking_first": 0
+      },
+      {
+        "action": "keep_old_desk",
+        "ev": -36.5,
+        "ci": [
+          -36.5,
+          -36.5
+        ],
+        "p_events": {
+          "missed_behavior": 0.05000000000000001,
+          "privacy_incident": 0.4000000000000001
+        },
+        "worst_case_p5": -54.0,
+        "models_ranking_first": 0
+      }
+    ],
+    "epistemic_spread": {
+      "ev_range_across_models": [
+        -22.000000000000004,
+        -22.000000000000004
+      ],
+      "agree_on_best": true
+    },
+    "flip_parameters": [],
+    "warnings": [],
+    "models_used": 3,
+    "compiler": "harness"
+  },
+  "warehouse": {
+    "recommended": "phased_move",
+    "confidence": "low",
+    "options": [
+      {
+        "action": "phased_move",
+        "ev": -12.0,
+        "ci": [
+          -12.0,
+          -12.0
+        ],
+        "p_events": {
+          "stockout": 0.1
+        },
+        "worst_case_p5": -30.0,
+        "models_ranking_first": 2
+      },
+      {
+        "action": "weekend_move",
+        "ev": -16.0,
+        "ci": [
+          -16.0,
+          -16.0
+        ],
+        "p_events": {
+          "stockout": 0.4
+        },
+        "worst_case_p5": -34.0,
+        "models_ranking_first": 0
+      }
+    ],
+    "epistemic_spread": {
+      "ev_range_across_models": [
+        -12.0,
+        -12.0
+      ],
+      "agree_on_best": true
+    },
+    "flip_parameters": [
+      {
+        "param": "stockout_p",
+        "flips_at": "low",
+        "new_best": "weekend_move"
+      },
+      {
+        "param": "stockout_p",
+        "flips_at": "low",
+        "new_best": "weekend_move"
+      }
+    ],
+    "warnings": [],
+    "models_used": 2,
+    "compiler": "harness"
+  },
+  "split": {
+    "recommended": "buy",
+    "confidence": "low",
+    "options": [
+      {
+        "action": "buy",
+        "ev": -8.0,
+        "ci": [
+          -9.385929291125633,
+          -6.614070708874367
+        ],
+        "p_events": {
+          "late": 0.5
+        },
+        "worst_case_p5": -9.0,
+        "models_ranking_first": 1
+      },
+      {
+        "action": "rent",
+        "ev": -8.5,
+        "ci": [
+          -13.350752518939716,
+          -3.649247481060284
+        ],
+        "p_events": {
+          "late": 0.5
+        },
+        "worst_case_p5": -12.0,
+        "models_ranking_first": 1
+      }
+    ],
+    "epistemic_spread": {
+      "ev_range_across_models": [
+        -9.0,
+        -7.0
+      ],
+      "agree_on_best": false
+    },
+    "flip_parameters": [],
+    "warnings": [],
+    "models_used": 2,
+    "compiler": "harness"
+  }
+}

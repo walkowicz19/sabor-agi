@@ -1,0 +1,181 @@
+:root {
+  color-scheme: light;
+  --paper: #f4efe6;
+  --sheet: #fffdf8;
+  --ink: #1c1915;
+  --muted: #4e463d;
+  --line: #d8d0c4;
+  --seal: #8c2f2c;
+  --seal-ink: #fffdf8;
+  --focus: #1c1915;
+  --shadow: 0 14px 32px rgba(28, 25, 21, 0.12);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #e6dfd3;
+  color: var(--ink);
+  caret-color: var(--ink);
+}
+
+::selection {
+  background: #e7c7c1;
+  color: var(--ink);
+}
+
+.slip {
+  width: min(26rem, calc(100% - 2rem));
+  margin: 8vh auto 3rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.slip-head {
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.alert {
+  margin: 0 0 1rem;
+  color: var(--seal);
+  font-size: 0.95rem;
+}
+
+form,
+.stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+input:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.65;
+}
+
+.primary,
+.choice {
+  width: 100%;
+  text-align: left;
+  border-radius: 2px;
+}
+
+.primary {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--seal);
+  background: var(--seal);
+  color: var(--seal-ink);
+}
+
+.primary:hover:not(:disabled) {
+  background: #742624;
+}
+
+.choice {
+  display: flex;
+  gap: 0.85rem;
+  align-items: baseline;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--sheet);
+  color: var(--ink);
+}
+
+.choice:hover {
+  border-color: var(--ink);
+}
+
+.choice kbd {
+  min-width: 1.2rem;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.record {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.record div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--line);
+}
+
+.record dt {
+  color: var(--muted);
+}
+
+.record dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 40rem) {
+  .slip {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "recommended": "strangler_registration_first",
+  "confidence": "high",
+  "options": [
+    {
+      "action": "strangler_registration_first",
+      "ev": -30.0,
+      "ci": [
+        -30.0,
+        -30.0
+      ],
+      "p_events": {
+        "credential_incident": 0.05000000000000001,
+        "missed_behavior": 0.12
+      },
+      "worst_case_p5": -65.0,
+      "models_ranking_first": 3
+    },
+    {
+      "action": "big_bang_rewrite",
+      "ev": -41.95,
+      "ci": [
+        -41.95,
+        -41.95
+      ],
+      "p_events": {
+        "credential_incident": 0.08,
+        "missed_behavior": 0.3499999999999999
+      },
+      "worst_case_p5": -70.0,
+      "models_ranking_first": 0
+    },
+    {
+      "action": "facade_keep_cobol",
+      "ev": -64.0,
+      "ci": [
+        -64.0,
+        -64.0
+      ],
+      "p_events": {
+        "credential_incident": 0.3,
+        "missed_behavior": 0.0
+      },
+      "worst_case_p5": -120.0,
+      "models_ranking_first": 0
+    }
+  ],
+  "epistemic_spread": {
+    "ev_range_across_models": [
+      -30.0,
+      -30.0
+    ],
+    "agree_on_best": true
+  },
+  "flip_parameters": [],
+  "warnings": [],
+  "models_used": 3,
+  "compiler": "harness"
+}
