@@ -26,9 +26,25 @@ uv sync --group dev
 uv run --group dev pytest -q
 ```
 
-## Use it from Cursor
+## Use it from an MCP client
 
-The server speaks MCP over stdio. It is meant to run on your machine, next to the editor. Copy `mcp.example.json` into your Cursor MCP config and replace `REPLACE_WITH_ABSOLUTE_PROJECT_PATH` with the folder that contains this file. If `uv` is not on the PATH Cursor uses, put the full path to `uv` in `command`.
+The server speaks MCP over stdio. It is meant to run on your machine, next to the editor. Paste this into the client’s MCP config (Cursor, Claude Desktop, VS Code, or any client that uses `mcpServers`). Replace `REPLACE_WITH_ABSOLUTE_PROJECT_PATH` with the folder that contains this file. If `uv` is not on the PATH that client uses, put the full path to `uv` in `command`.
+
+```json
+{
+  "mcpServers": {
+    "saboragi": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "REPLACE_WITH_ABSOLUTE_PROJECT_PATH",
+        "saboragi"
+      ]
+    }
+  }
+}
+```
 
 That config only starts the local server. SaborAGI looks for a model already running on this machine: Ollama at `127.0.0.1:11434`, or LM Studio at `127.0.0.1:1234`. A model id and an API key are optional. A remote server is used when you set `SABORAGI_BASE_URL` to it.
 
